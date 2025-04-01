@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import Counter from './Counter.jsx';
+
 function App() {
   const [counts, setCounts] = useState([1, 4, 3]);
 
@@ -32,3 +35,5 @@ function App() {
     </div>
   );
 }
+
+export default App;
