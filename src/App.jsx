@@ -2,9 +2,12 @@ function App() {
   const [counts, setCounts] = useState([1, 4, 3]);
 
   const updateCount = (index, delta) => {
-    const newCounts = [...counts]; // Copy array (immutability)
-    newCounts[index] += delta;
-    setCounts(newCounts);
+    const newCounts = [...counts];
+    const newValue = newCounts[index] + delta;
+    if (newValue >= 0 && newValue <= 10) {
+      newCounts[index] = newValue;
+      setCounts(newCounts);
+    }
   };
 
   const resetCounts = () => {
