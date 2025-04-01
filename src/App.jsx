@@ -7,11 +7,16 @@ function App() {
     setCounts(newCounts);
   };
 
+  const resetCounts = () => {
+    setCounts(counts.map(() => 0));
+  };
+
   const totalCount = counts.reduce((sum, current) => sum + current, 0);
 
   return (
     <div className="App">
       <h1>Total Count: {totalCount}</h1>
+      <button onClick={resetCounts}>Reset All</button>
       {counts.map((value, index) => (
         <Counter
           key={index}
