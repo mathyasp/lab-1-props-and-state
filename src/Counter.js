@@ -1,11 +1,10 @@
 function Counter(props) {
-
   return (
     <div className="Counter">
       <small>{props.label}</small>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button onClick={() => setCount(count - 1)}>-</button>
+      <h1>{props.value}</h1>
+      <button onClick={props.increment}>+</button>
+      <button onClick={props.decrement}>-</button>
     </div>
   );
 }
